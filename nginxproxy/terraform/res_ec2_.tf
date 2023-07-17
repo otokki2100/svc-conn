@@ -1,6 +1,5 @@
 module "ec2_nginxproxy" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "5.0.0"
+  source = "terraform-aws-modules/ec2-instance/aws"
 
   name                        = "ec2-nginxproxy"
   instance_type               = var.ec2_nginxproxy.instance_type
@@ -18,8 +17,7 @@ module "ec2_nginxproxy" {
 }
 
 module "ec2_client" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "5.0.0"
+  source = "terraform-aws-modules/ec2-instance/aws"
 
   name                        = "ec2-client"
   instance_type               = var.ec2_client.instance_type

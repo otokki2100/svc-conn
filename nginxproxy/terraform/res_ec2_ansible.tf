@@ -1,7 +1,7 @@
 resource "local_file" "ansible_inventory" {
   filename        = "./hosts"
   file_permission = "0600"
-  content  = <<-EOT
+  content         = <<-EOT
 all:
   hosts:
     ec2_nginxproxy:

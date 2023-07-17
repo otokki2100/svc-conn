@@ -52,5 +52,5 @@ variable "email" {
 
 locals {
   current_date = formatdate("YYMMDDHHmm", timestamp())
-  domain = "tele-${local.current_date}.${var.domain}"
+  domain       = "tele-${local.current_date}.${var.domain}"
 }

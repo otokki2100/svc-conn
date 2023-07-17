@@ -1,6 +1,5 @@
 module "nginxproxy" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "4.17.2"
+  source = "terraform-aws-modules/security-group/aws"
 
   name   = "nginxproxy"
   vpc_id = module.vpc.vpc_id

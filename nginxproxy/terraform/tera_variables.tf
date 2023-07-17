@@ -1,23 +1,15 @@
-variable "aws_access_key" {
-  description = "AWS access key"
-}
-
-variable "aws_secret_key" {
-  description = "AWS secret key"
+variable "region" {
+  description = "AWS region"
+  default     = "us-east-1"
 }
 
 variable "myip" {
   description = "My IP"
 }
 
-variable "region" {
-  description = "AWS region"
-  default     = "us-east-1"
-}
-
 variable "ec2_nginxproxy" {
   type = object({
-    user          = string    
+    user          = string
     instance_type = string
     ami           = string
     user_data     = string
@@ -26,7 +18,7 @@ variable "ec2_nginxproxy" {
 
 variable "ec2_client" {
   type = object({
-    user          = string    
+    user          = string
     instance_type = string
     ami           = string
     user_data     = string

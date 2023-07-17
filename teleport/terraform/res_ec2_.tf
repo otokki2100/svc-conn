@@ -1,6 +1,5 @@
 module "ec2_teleport" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "5.0.0"
+  source = "terraform-aws-modules/ec2-instance/aws"
 
   name                        = "ec2-teleport"
   instance_type               = var.ec2_teleport.instance_type
@@ -10,9 +9,9 @@ module "ec2_teleport" {
   vpc_security_group_ids      = [module.teleport.security_group_id]
   associate_public_ip_address = true
   private_ip                  = "10.0.101.11"
-  user_data                   = templatefile(var.ec2_teleport.user_data, {
-    domain                    = local.domain,
-    email                     = var.email,
+  user_data = templatefile(var.ec2_teleport.user_data, {
+    domain = local.domain,
+    email  = var.email,
   })
 
   tags = {
@@ -21,8 +20,7 @@ module "ec2_teleport" {
 }
 
 module "ec2_node" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "5.0.0"
+  source = "terraform-aws-modules/ec2-instance/aws"
 
   name                        = "ec2-node"
   instance_type               = var.ec2_node.instance_type
@@ -32,9 +30,9 @@ module "ec2_node" {
   vpc_security_group_ids      = [module.node.security_group_id]
   associate_public_ip_address = true
   private_ip                  = "10.0.101.12"
-  user_data                   = templatefile(var.ec2_node.user_data, {
-    domain                    = local.domain,
-    email                     = var.email,
+  user_data = templatefile(var.ec2_node.user_data, {
+    domain = local.domain,
+    email  = var.email,
   })
 
   tags = {

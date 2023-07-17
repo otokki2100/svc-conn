@@ -1,6 +1,5 @@
 module "teleport" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "4.17.2"
+  source = "terraform-aws-modules/security-group/aws"
 
   name   = "teleport"
   vpc_id = module.vpc.vpc_id
@@ -31,8 +30,7 @@ module "teleport" {
 }
 
 module "node" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "4.17.2"
+  source = "terraform-aws-modules/security-group/aws"
 
   name   = "node"
   vpc_id = module.vpc.vpc_id
@@ -57,8 +55,7 @@ module "node" {
 }
 
 module "client" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "4.17.2"
+  source = "terraform-aws-modules/security-group/aws"
 
   name   = "client"
   vpc_id = module.vpc.vpc_id
